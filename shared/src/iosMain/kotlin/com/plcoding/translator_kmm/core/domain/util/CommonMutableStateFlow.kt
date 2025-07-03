@@ -1,9 +1,11 @@
 package com.plcoding.translator_kmm.core.domain.util
 
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.ExperimentalForInheritanceCoroutinesApi
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
+@OptIn(ExperimentalCoroutinesApi::class, ExperimentalForInheritanceCoroutinesApi::class)
 actual open class CommonMutableStateFlow<T> actual constructor(
     private val flow: MutableStateFlow<T>
 ): CommonStateFlow<T>(flow), MutableStateFlow<T> {

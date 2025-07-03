@@ -7,8 +7,6 @@ plugins {
 }
 
 kotlin {
-    tasks.create("testClasses")
-
     androidTarget()
     iosX64()
     iosArm64()

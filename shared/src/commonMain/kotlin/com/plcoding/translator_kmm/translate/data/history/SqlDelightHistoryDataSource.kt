@@ -9,8 +9,7 @@ import com.plcoding.translator_kmm.translate.domain.history.HistoryDataSource
 import com.plcoding.translator_kmm.translate.domain.history.HistoryItem
 import kotlinx.coroutines.flow.map
 import kotlin.coroutines.CoroutineContext
-import kotlin.time.Clock
-import kotlin.time.ExperimentalTime
+import kotlinx.datetime.Clock
 
 class SqlDelightHistoryDataSource(
     db: TranslateDatabase
@@ -29,7 +28,6 @@ class SqlDelightHistoryDataSource(
             .toCommonFlow()
     }
 
-    @OptIn(ExperimentalTime::class)
     override suspend fun insertHistoryItem(item: HistoryItem) {
         queries.insertHistoryEntity(
             id = item.id,
