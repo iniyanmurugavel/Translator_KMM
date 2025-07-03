@@ -43,7 +43,7 @@ kotlin {
             implementation(libs.sqldelight.android.driver)
         }
         iosMain.dependencies {
-            implementation(libs.ktor.ios)
+            implementation(libs.ktor.client.darwin)  // Changed from ktor.ios
             implementation(libs.sqldelight.native.driver)
         }
     }
@@ -51,15 +51,13 @@ kotlin {
 
 android {
     namespace = "com.plcoding.translator_kmm"
-    compileSdk = 34
+    compileSdk = 36
     defaultConfig {
-        minSdk = 24
-        targetSdk = 34
+        minSdk = 31
     }
-
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 

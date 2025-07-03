@@ -9,10 +9,10 @@ plugins {
 
 android {
     namespace = "com.plcoding.translator_kmm.android"
-    compileSdk = 35
+    compileSdk = 36
     defaultConfig {
         applicationId = "com.plcoding.translator_kmm.android"
-        minSdk = 24
+        minSdk = 31
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -20,17 +20,18 @@ android {
         testInstrumentationRunner = "com.plcoding.translator_kmm.TestHiltRunner"
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = "21"
     }
     buildFeatures {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+        // Remove this line - not needed with new Compose Compiler plugin
+        // kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
     packaging {
         resources {
@@ -73,3 +74,5 @@ dependencies {
     kspAndroidTest(libs.hilt.android.compiler)
     androidTestImplementation(libs.hilt.testing)
 }
+
+
