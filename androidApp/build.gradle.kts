@@ -25,6 +25,7 @@ android {
     }
     kotlinOptions {
         jvmTarget = "21"
+        freeCompilerArgs += "-Xexpect-actual-classes"
     }
     buildFeatures {
         compose = true
